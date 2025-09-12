@@ -12,6 +12,14 @@ public class MyFirstClass {
         System.out.println("\tthe line is indented");
         System.out.println("This is the second part");
         System.out.print("This is the second day.");
+        
+
+        int answer;
+        answer = (int) (17.5/19.2);
+        System.out.println(answer);
+
+
+
 
 
     }
