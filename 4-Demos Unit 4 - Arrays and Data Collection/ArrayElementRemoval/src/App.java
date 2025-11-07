@@ -1,5 +1,11 @@
 public class App {
     public static void main(String[] args) throws Exception {
+
+
+
+
+
+
         int[] nums = {9,5,61,281,-7,56,-1000,200,878};
         //Count the number of negatives
         int countNeg = 0;
@@ -22,6 +28,9 @@ public class App {
                 skipped++;
             }
         }
+
+
+        
 
     }
 }
