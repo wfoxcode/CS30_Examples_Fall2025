@@ -13,13 +13,20 @@ public class App {
         // ------------------------------------------------
 
         for (int i = 0; i < nums.length; i++) {
-            for(int j = i+1; j < nums.length; j++){
-                if (nums[j-1] > nums[j]) { //SWAP
-                    int temp = nums[j];
-                    nums[j] = nums[j-1];
-                    nums[j-1] = temp;
+            int min = i; //Assume i is the lowest to start
+
+            //locate the lowest value in unsorted part
+            for (int j = i+1; j < nums.length; j++) {
+                if (nums[min] > nums[j]) {  //if J's value is lower, it is the new min
+                    min = j;
                 }
             }
+
+            //Swap the values
+            int temp = nums[min];   // store the min
+            nums[min] = nums[i];    // move i to the middle of the array
+            nums[i] = temp;         // place the min at position i
+
         }
 
         System.out.println(Arrays.toString(nums)); //prints out array in rough form
