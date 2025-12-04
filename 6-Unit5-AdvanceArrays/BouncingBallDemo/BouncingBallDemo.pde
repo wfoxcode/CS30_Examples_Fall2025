@@ -1,15 +1,19 @@
 import java.util.ArrayList;
 
-Ball test;
+ArrayList<Ball> b_list = new ArrayList<Ball>();
 
 public void setup() {
   size(1280, 720);
   background(255);
-  test = new Ball(width/2, height/2, 30);
+  b_list.add( new Ball(width/2, height/2, 30) );
 }
 
 public void draw() {
   background(255);
-  test.display();
-  test.move();
+  
+  for (Ball b : b_list) {
+    b.move();
+    b.display();
+  }
+  
 }
