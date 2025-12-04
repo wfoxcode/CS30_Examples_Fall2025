@@ -8,8 +8,8 @@ public class Ball {
     y = tempY;
     r = tempR; //Radius
     
-    dx = 5;
-    dy = 5;
+    dx = (int) random(1, 7);
+    dy = (int) random(1, 7);
     
     cr = (int) random(0, 256);
     cg = (int) random(0, 256);

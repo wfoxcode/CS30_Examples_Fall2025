@@ -17,3 +17,13 @@ public void draw() {
   }
   
 }
+
+public void mousePressed() {
+  b_list.add( new Ball(mouseX, mouseY, 30) );
+}
+
+public void keyPressed() {
+  if (key == 'c') {
+    // clear command
+  }
+}
