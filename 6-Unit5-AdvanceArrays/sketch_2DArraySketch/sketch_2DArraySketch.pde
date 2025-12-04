@@ -1,23 +1,49 @@
-Button test = new Button(20,20,50,50,true);
+public Button test = new Button(20,20,50,50,true);
 
-Button[][] buttons;
+public Button[][] buttons;
+public int ROWS = 10, COLS = 10;
+public int buttonW, buttonH;
 
 public void setup() {
-  size(1200,700);
-  buttons = new Button[10][10];
+  size(1000,600);
   
-  for (int cols = 0; cols < buttons.length; cols++) {
-    for (int rows = 0; rows < buttons[cols].length; rows++) {
-      buttons[cols][rows] = new Button(10 * cols, 10 * rows, 10, 10, true);
+  //set button width and height
+  buttonW = width / COLS;
+  buttonH = height / ROWS;
+  
+  //initialize the size
+  buttons = new Button[10][10]; 
+  
+  //initializing the elements
+  for (int i = 0; i < buttons.length; i++) {
+    for (int j = 0; j < buttons[i].length; j++) {
+      buttons[i][j] = new Button(i * buttonW, j * buttonH, buttonW, buttonH, false);
     }
   }
   
 } //end of setup method
 
-
-
-
-
 public void draw() {
-  test.display();
+  //test.display();
+  
+  for (int i = 0; i < buttons.length; i++) {
+    for (int j = 0; j < buttons[i].length; j++) {
+      buttons[i][j].display();
+    }
+  }
+  
+  
+} //end of draw method
+
+public void mousePressed() {
+  //test.click(mouseX, mouseY);
+  for (int i = 0; i < buttons.length; i++) {
+    for (int j = 0; j < buttons[i].length; j++) {
+      buttons[i][j].click(mouseX,mouseY);
+    }
+  }
+}
+
+public void keyPressed() {
+  
 }
