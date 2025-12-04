@@ -8,8 +8,8 @@ public class Ball {
     y = tempY;
     r = tempR; //Radius
     
-    dx = 1;
-    dy = 1;
+    dx = 5;
+    dy = 5;
     
     cr = (int) random(0, 256);
     cg = (int) random(0, 256);
@@ -21,5 +21,20 @@ public class Ball {
     noStroke();
     circle(x,y,r*2);
   }
+  
+  public void move() {
+    x += dx; //x = x + dx;
+    y += dy; //y = y + dy;
+    
+    if (y > (height - r) || y < r) {
+      dy *= -1; // dy = dy * -1;
+    }
+    else if(x > width - r || x < r) {
+      dx *= -1; // dx = dx * -1;
+    }
+    
+  }
+  
+  
   
 } //end of class -----------------
