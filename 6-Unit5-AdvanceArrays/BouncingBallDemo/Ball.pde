@@ -1,6 +1,7 @@
 public class Ball {
   public int x, y, dx, dy, r; 
   private int cr, cg, cb;
+  private int grav;
   
   //constructor
   public Ball(int tempX, int tempY) {
@@ -10,10 +11,11 @@ public class Ball {
     
     dx = 0; //predefine
     dy = 0; //predefine
+    grav = 1;
     
     while (dx == 0 && dy == 0) { //repeats if they match
-      dx = (int) random(-10, 10);
-      dy = (int) random(-10, 10);
+      dx = (int) random(-7, 7);
+      dy = (int) random(-7, 7);
     }
     
     cr = (int) random(0, 256);
@@ -28,6 +30,7 @@ public class Ball {
   }
   
   public void move() {
+    dy += grav; //deceleration or gravity
     x += dx; //x = x + dx;
     y += dy; //y = y + dy;
     
