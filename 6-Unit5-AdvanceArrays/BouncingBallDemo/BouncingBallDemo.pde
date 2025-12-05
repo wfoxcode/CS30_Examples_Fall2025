@@ -24,6 +24,9 @@ public void mousePressed() {
 
 public void keyPressed() {
   if (key == 'c') {
-    // clear command
+    // Loop through backwards because it doesn't affect non-deleted index numbers
+    for (int i = b_list.size()-1; i >= 0; i--) {
+      b_list.remove(i);
+    }
   }
 }
