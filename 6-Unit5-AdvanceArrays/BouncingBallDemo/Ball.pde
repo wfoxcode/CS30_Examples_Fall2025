@@ -2,12 +2,15 @@ public class Ball {
   public int x, y, dx, dy, r; 
   private int cr, cg, cb;
   private int grav;
+  public boolean inf;
   
   //constructor
-  public Ball(int tempX, int tempY) {
+  public Ball(int tempX, int tempY, boolean tempInf) {
     x = tempX;
     y = tempY;
     r = (int) random(10,40); //Radius
+    
+    inf = tempInf;
     
     dx = 0; //predefine
     dy = 0; //predefine
@@ -24,6 +27,13 @@ public class Ball {
   }
   
   public void display() {
+    if (inf) {
+      cr = 255;
+      cg = 0;
+      cb = 0;
+      grav = -1;
+    }
+    
     fill(cr,cg,cb);
     noStroke();
     circle(x,y,r*2);
