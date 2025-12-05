@@ -13,6 +13,11 @@ public void draw() {
   
   for (Ball b : b_list) {
     b.move();
+    
+    for (Ball otherB : b_list) {
+      b.checkCollision(otherB);
+    }
+    
     b.display();
   }
   

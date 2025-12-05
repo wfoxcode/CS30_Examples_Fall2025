@@ -1,5 +1,5 @@
 public class Ball {
-  private int x, y, dx, dy, r; 
+  public int x, y, dx, dy, r; 
   private int cr, cg, cb;
   
   //constructor
@@ -40,6 +40,22 @@ public class Ball {
     
   }
   
+  public void checkCollision(Ball otherBall) {
+    int radiusSum = r + otherBall.r;
+    int distanceApart = (int) dist(x, y, otherBall.x, otherBall.y);
+    
+    if (distanceApart < radiusSum) {
+      int tempDx = dx;
+      int tempDy = dy;
+      
+      dx = otherBall.dx;
+      dy = otherBall.dy;
+      
+      otherBall.dx = tempDx;
+      otherBall.dy = tempDy;
+    }
+    
+  }
   
   
 } //end of class -----------------
