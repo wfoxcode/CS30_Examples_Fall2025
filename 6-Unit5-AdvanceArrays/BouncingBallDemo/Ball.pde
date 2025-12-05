@@ -3,13 +3,18 @@ public class Ball {
   private int cr, cg, cb;
   
   //constructor
-  public Ball(int tempX, int tempY, int tempR) {
+  public Ball(int tempX, int tempY) {
     x = tempX;
     y = tempY;
-    r = tempR; //Radius
+    r = (int) random(10,40); //Radius
     
-    dx = (int) random(1, 7);
-    dy = (int) random(1, 7);
+    dx = 0; //predefine
+    dy = 0; //predefine
+    
+    while (dx == 0 && dy == 0) { //repeats if they match
+      dx = (int) random(-10, 10);
+      dy = (int) random(-10, 10);
+    }
     
     cr = (int) random(0, 256);
     cg = (int) random(0, 256);

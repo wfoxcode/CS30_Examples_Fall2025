@@ -5,7 +5,7 @@ ArrayList<Ball> b_list = new ArrayList<Ball>();
 public void setup() {
   size(1280, 720);
   background(255);
-  b_list.add( new Ball(width/2, height/2, 30) );
+  b_list.add( new Ball(width/2, height/2) );
 }
 
 public void draw() {
@@ -19,7 +19,7 @@ public void draw() {
 }
 
 public void mousePressed() {
-  b_list.add( new Ball(mouseX, mouseY, 30) );
+  b_list.add( new Ball(mouseX, mouseY) );
 }
 
 public void keyPressed() {
