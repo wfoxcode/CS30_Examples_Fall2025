@@ -1,9 +1,12 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public void setup() {
   // Declare and initialize
   // Arraylist< DATATYPE > = new ArrayList< DATATYPE >();
+
   ArrayList<String> cars = new ArrayList<String>();
+  List<String> car2 = new ArrayList<String>();
   
   // toString is built in for raw outputs
   System.out.println(cars);

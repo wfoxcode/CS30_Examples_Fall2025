@@ -1,5 +1,8 @@
 public class Animal {
-  public int age;
+  private int health;   //accessible by parent, not accessible by children or users
+  protected int size;   //accessible by parent and children, not by users
+  public int age;       //accessible by everyone
+  
   
   public Animal() {
     age = 0;
