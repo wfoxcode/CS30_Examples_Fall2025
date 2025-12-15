@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 import java.io.*;
 
 public class App {
@@ -9,6 +10,8 @@ public class App {
         names = userCreateList(names);
         printNamesList(names);
         saveListToFile(names, fileName);
+        
+        String[] inputdata = loadFromFile(fileName);
 
 
     } // end of main method ----------------------------------------
@@ -34,7 +37,7 @@ public class App {
 
     public static void saveListToFile(String[] names, String file) {
 
-        try ( PrintWriter writer = new PrintWriter( new FileWriter(file))) {
+        try ( PrintWriter writer = new PrintWriter( new FileWriter(file)) ) {
             for (int i = 0; i < names.length; i++) {
                 writer.println(names[i]);
             }
@@ -47,5 +50,36 @@ public class App {
         System.out.println();
     } //end of save method ---------------------------------------------------
 
+    public static String[] loadFromFile(String fileName) {
+        File inputFile = new File(fileName);
+        String[] finalArray;
+        ArrayList<String> inputArray = new ArrayList<>();
+
+        try ( Scanner reader = new Scanner(inputFile) ) {
+            while (reader.hasNextLine()) {
+                String data = reader.nextLine();
+                inputArray.add(data);
+                System.out.println("Data imported: " + data);
+            }
+        } 
+        catch (FileNotFoundException e) {
+            System.out.println("An error occured while reading the file.");
+            e.printStackTrace();
+        }
+
+        // define array size and populate array with the list data
+        finalArray = new String[inputArray.size()];
+        for (int i = 0; i < finalArray.length; i++) {
+            finalArray[i] = inputArray.get(i);
+        }
+
+        return finalArray;
+    } //end of read method --------------------
 
 } // end of class -------------------------------
+
+
+
+
+
+
