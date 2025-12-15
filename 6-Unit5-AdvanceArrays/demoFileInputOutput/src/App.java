@@ -7,12 +7,13 @@ public class App {
         String[] names = new String[5];
         String fileName = "names.txt";
 
-        names = userCreateList(names);
-        printNamesList(names);
-        saveListToFile(names, fileName);
+        // names = userCreateList(names);
+        // printNamesList(names);
+        // saveListToFile(names, fileName);
         
         String[] inputdata = loadFromFile(fileName);
-
+        printNamesList(inputdata);
+        
 
     } // end of main method ----------------------------------------
 
